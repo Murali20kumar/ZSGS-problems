@@ -138,5 +138,22 @@ class EvenOdd { //10) To check if a number is even or odd
     }
 }
 
+class VowelConsonantCheck { //11) To check if a character is a vowel or consonant
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a character: ");
+        char ch = scanner.next().charAt(0);
+
+        if ("AEIOUaeiou".indexOf(ch) != -1) {
+            System.out.println(ch + " is a Vowel.");
+        } else {
+            System.out.println(ch + " is a Consonant.");
+        }
+
+        scanner.close();
+    }
+}
+
+
 
 
