@@ -154,6 +154,94 @@ class VowelConsonantCheck { //11) To check if a character is a vowel or consonan
     }
 }
 
+class LargestOfFour { // 12) To find the largest of four numbers
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter four numbers: ");
+        int a = scanner.nextInt(), b = scanner.nextInt(), c = scanner.nextInt(), d = scanner.nextInt();
+
+        int largest = Math.max(Math.max(a, b), Math.max(c, d));
+
+        System.out.println("Largest number: " + largest);
+
+        scanner.close();
+    }
+}
+
+class QuadraticEquation { // 13) To find the roots of a quadratic equation
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter coefficients a, b, and c: ");
+        double a = scanner.nextDouble(), b = scanner.nextDouble(), c = scanner.nextDouble();
+
+        double discriminant = b * b - 4 * a * c;
+        if (discriminant > 0) {
+            double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            System.out.println("Roots: " + root1 + " and " + root2);
+        } else if (discriminant == 0) {
+            System.out.println("Root: " + (-b / (2 * a)));
+        } else {
+            System.out.println("No real roots.");
+        }
+
+        scanner.close();
+    }
+}
+
+class PNCheck { // 14) To check if a number is positive or negative
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        if (num > 0) {
+            System.out.println("Positive");
+        } else if (num < 0) {
+            System.out.println("Negative");
+        } else {
+            System.out.println("Zero");
+        }
+
+        scanner.close();
+    }
+}
+
+class SumNaturalNumbers { // 15) To find the sum of first n natural numbers and the smallest digit in that sum
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = scanner.nextInt();
+
+        int sum = n * (n + 1) / 2;
+        System.out.println("Sum of natural numbers: " + sum);
+
+        int smallestDigit = 9;
+        while (sum > 0) {
+            smallestDigit = Math.min(smallestDigit, sum % 10);
+            sum /= 10;
+        }
+        System.out.println("Smallest digit of the sum: " + smallestDigit);
+
+        scanner.close();
+    }
+}
+
+class AlphabetCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a character: ");
+        char ch = scanner.next().charAt(0);
+
+        if (Character.isLetter(ch)) {
+            System.out.println(ch + " is an Alphabet.");
+        } else {
+            System.out.println(ch + " is not an Alphabet.");
+        }
+
+        scanner.close();
+    }
+}
 
 
 
