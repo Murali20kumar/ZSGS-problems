@@ -227,7 +227,7 @@ class SumNaturalNumbers { // 15) To find the sum of first n natural numbers and 
     }
 }
 
-class AlphabetCheck {
+class AlphabetCheck {// 16) To check if a character is an alphabet
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a character: ");
@@ -242,6 +242,70 @@ class AlphabetCheck {
         scanner.close();
     }
 }
+
+class ConditionalOperators { // 17) To define the functionality of conditional operators
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        String result = (num > 0) ? "Positive" : (num < 0) ? "Negative" : "Zero";
+        System.out.println("The number is: " + result);
+
+        scanner.close();
+    }
+}
+
+class areaofspace { //18 ) To find the area of space between two circles
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter radius of outer circle: ");
+        double outerRadius = scanner.nextDouble();
+        System.out.print("Enter radius of inner circle: ");
+        double innerRadius = scanner.nextDouble();
+
+        double area = Math.PI * (outerRadius * outerRadius - innerRadius * innerRadius);
+        System.out.println("Area of space between circles: " + area);
+
+        scanner.close();
+    }
+}
+
+ class EvaluateExpressions { // 19) To evaluate expressions using pre and post increment/decrement operators
+    public static void main(String[] args) {
+        int a = 10, b = 5, x = 69;
+
+        int result1 = ++a - --b;
+        int result2 = a-- % b++;
+        int result3 = (a *= (b += 5));
+        int result4 = (x = 69 >>> 2);
+
+        System.out.println("i) ++a - --b = " + result1);
+        System.out.println("ii) a-- % b++ = " + result2);
+        System.out.println("iii) a *= b += 5 = " + result3);
+        System.out.println("iv) x = 69 >>> 2 = " + result4);
+        System.out.println("Value of x: " + x);
+    }
+}
+
+class EvaluateA { // 20) To evaluate an expression with given value
+
+    public static void main(String[] args) {
+        int a = 28;
+        a = ++a + ++a + --a + a--;
+        System.out.println("Result when a = 28: " + a);
+    }
+}
+
+class EvaluateX {// 21) To evaluate an expression with given value
+    public static void main(String[] args) {
+        int x = 5; 
+        x = ++x * 2 + 3 * --x;
+        System.out.println("Result: " + x);
+    }
+}
+
+
 
 
 
