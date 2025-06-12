@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class zsgs { //1) Converts an integer to its binary, octal, and hexadecimal representations.
     public static void main(String[] args) {
@@ -305,6 +305,114 @@ class EvaluateX {// 21) To evaluate an expression with given value
     }
 }
 
+class EvaluteZ { // 22) To evaluate an expression of Z
+     public static void main(String[] args) {
+        int y = 10;
+        int z = (++y * (y++ + 5));
+
+        System.out.println("z = " + z);
+    }
+
+}
+
+class EvaluateX1 { // 23) To evaluate an expression of X1
+    public static void main(String[] args) {
+        int x = 5;
+        int x1 = ++x - x++ + --x;
+
+        System.out.println("x1 = " + x1);
+    }
+}
+
+class FinalKeyword { // 24) To demonstrate the use of final keyword
+    final int VALUE = 100;
+
+    public static void main(String[] args) {
+        FinalKeyword obj = new FinalKeyword();
+        System.out.println("Final variable VALUE: " + obj.VALUE);
+    }
+}
+
+ class MergeArrays { // 25) To merge two arrays and find repeated elements
+    public static void main(String[] args) {
+        int[] arr1 = {2,4,5,6,7,9,10,13};
+        int[] arr2 = {2,3,4,5,6,7,8,9,11,15};
+
+        Set<Integer> mergedSet = new LinkedHashSet<>();
+        Set<Integer> repeatedSet = new LinkedHashSet<>();
+
+        for (int num : arr1) mergedSet.add(num);
+        for (int num : arr2) {
+            if (!mergedSet.add(num)) repeatedSet.add(num);
+        }
+
+        System.out.println("Merged array: " + mergedSet);
+        System.out.println("Repeated elements: " + repeatedSet);
+    }
+}
+
+class RightRotateMatrix { // 26) To right rotate a matrix 
+    public static void main(String[] args) {
+        int[][] matrix = {{1, 2}, {3, 4}};
+
+        int rows = matrix.length, cols = matrix[0].length;
+        int[][] rotated = new int[cols][rows];
+
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
+                rotated[j][rows - 1 - i] = matrix[i][j];
+
+        System.out.println("Rotated Matrix:");
+        for (int[] row : rotated) System.out.println(Arrays.toString(row));
+    }
+}
+
+class AlternateSort { // 27) To sort an array in alternate order
+    public static void main(String[] args) {
+        int[] arr = {2, 1, 3, 7, 5, 6, 4};
+        Arrays.sort(arr);
+
+        int[] result = new int[arr.length];
+        int left = 0, right = arr.length - 1, index = 0;
+
+        while (left <= right) {
+            if (index % 2 == 0) result[index++] = arr[left++];
+            else result[index++] = arr[right--];
+        }
+
+        System.out.println("Alternate Sorted Array: " + Arrays.toString(result));
+    }
+}
+
+class FactorialReverse { // 28) To find the factorial of a number and its reverse
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        long fact = 1;
+        for (int i = 1; i <= num; i++) fact *= i;
+
+        String reverseFact = new StringBuilder(String.valueOf(fact)).reverse().toString();
+
+        System.out.println("Factorial: " + fact);
+        System.out.println("Reverse of Factorial: " + reverseFact);
+
+        scanner.close();
+    }
+}
+
+class SumEvenPositions {   // 29) To find the sum of elements at even positions in an array
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+
+        int sum = 0;
+        for (int i = 0; i < arr.length; i += 2)
+            sum += arr[i];
+
+        System.out.println("Sum of elements at even positions: " + sum);
+    }
+}
 
 
 
