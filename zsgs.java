@@ -414,6 +414,145 @@ class SumEvenPositions {   // 29) To find the sum of elements at even positions 
     }
 }
 
+class SumOddPositions { // 30) To find the sum of elements at odd positions in an array
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+
+        int sum = 0;
+        for (int i = 1; i < arr.length; i += 2)
+            sum += arr[i];
+
+        System.out.println("Sum of elements at odd positions: " + sum);
+    }
+}
+
+class SecondLargest { // 31) To find the second largest element in an array
+    public static void main(String[] args) {
+        int[] arr = {5, 12, 7, 9, 3};
+        Arrays.sort(arr);
+
+        System.out.println("Second largest element: " + arr[arr.length - 2]);
+    }
+}
+
+class SecondSmallest { // 32) To find the second smallest element in an array
+    public static void main(String[] args) {
+        int[] arr = {5, 12, 7, 9, 3};
+        Arrays.sort(arr);
+
+        System.out.println("Second smallest element: " + arr[1]);
+    }
+}
+
+class ArraySize { // 33) To find the number of elements in an array
+    public static void main(String[] args) {
+        int[] arr = {3, 8, 2, 5, 1, 6};
+
+        System.out.println("Number of elements in the array: " + arr.length);
+    }
+}
+
+class CopyArray { // 34) To copy elements from one array to another 
+    public static void main(String[] args) {
+        int[] arr1 = {2, 4, 6, 8};
+        int[] arr2 = new int[arr1.length]; // Create a new array with same size
+
+        // Manually copying elements
+        for (int i = 0; i < arr1.length; i++) {
+            arr2[i] = arr1[i];
+        }
+
+        // Display copied array
+        System.out.print("Copied array: ");
+        for (int num : arr2) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+class FrequencyCount { // 35) To count the frequency of elements in an array
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 3, 8, 5, 5, 3, 8};
+        HashMap<Integer, Integer> freqMap = new HashMap<>();
+
+        for (int num : arr) {
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+        }
+
+        System.out.println("Element frequencies: " + freqMap);
+    }
+}
+
+class ReverseArray { // 36) To reverse the given array
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int left = 0, right = arr.length - 1;
+
+        while (left < right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
+
+        System.out.println("Reversed array: " + Arrays.toString(arr));
+    }
+}
+
+ class ArrayAverage { // 37) To find the average of elements in an array
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        int sum = 0;
+
+        for (int num : arr) {
+            sum += num;
+        }
+
+        double avg = sum / (double) arr.length;
+        System.out.println("Average of elements: " + avg);
+    }
+}
+
+class DeleteElement { // 38) To delete an element from an array 
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+
+        int target = 3; // Element to delete
+
+        // Remove the target element
+        list.remove(Integer.valueOf(target));
+
+        // Print the updated list
+        System.out.println("Array after deletion: " + list);
+    }
+}
+
+class InverseArray { // 39) To find the inverse of an array
+    public static int[] inverseElements(int[] arr) {
+        int[] inverseArr = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            inverseArr[arr[i]] = i;
+        }
+
+        return inverseArr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 0, 4, 1, 2};
+        int[] result = inverseElements(arr);
+
+        System.out.println("Inversed array: " + Arrays.toString(result));
+    }
+}
+
 
 
 
