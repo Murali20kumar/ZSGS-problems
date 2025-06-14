@@ -553,6 +553,89 @@ class InverseArray { // 39) To find the inverse of an array
     }
 }
 
+class OddInRange { // 40) To print odd numbers in a given range
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int low = sc.nextInt();
+        int high = sc.nextInt();
+
+        for (int i = low + 1; i < high; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + (i < high - 2 ? ", " : ""));
+            }
+        }
+
+        sc.close();
+    }
+}
+
+class PrintLetters { // 41) To print letters from A to a given letter
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the letter:");
+        char end = sc.next().charAt(0);
+
+        for (char c = 'A'; c <= end; c++) {
+            System.out.print(c);
+        }
+
+        sc.close();
+    }
+}
+
+class ReverseSentence { // 42) To reverse the words in a sentence
+    public static void main(String[] args) {
+        String input = "I love India";
+        reverseWords(input.split(" "), 0);
+    }
+
+    static void reverseWords(String[] words, int index) {
+        if (index == words.length) return;
+        reverseWords(words, index + 1);
+        System.out.print(words[index] + " ");
+    }
+}
+
+class NumberToWords { // 43) To convert a number to words
+    static String[] ones = {
+        "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+        "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen",
+        "Sixteen", "Seventeen", "Eighteen", "Nineteen"
+    };
+    static String[] tens = {
+        "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
+    };
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        System.out.println(convert(num));
+        sc.close();
+    }
+
+    static String convert(int num) {
+        if (num == 0) return "Zero";
+
+        StringBuilder result = new StringBuilder();
+        if (num >= 100) {
+            result.append(ones[num / 100]).append(" Hundred ");
+            num %= 100;
+        }
+
+        if (num >= 20) {
+            result.append(tens[num / 10]).append(" ");
+            num %= 10;
+        }
+
+        if (num > 0) {
+            result.append(ones[num]).append(" ");
+        }
+
+        return result.toString().trim();
+    }
+}
+
 
 
 
