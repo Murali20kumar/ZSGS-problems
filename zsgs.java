@@ -636,6 +636,92 @@ class NumberToWords { // 43) To convert a number to words
     }
 }
 
+class WithoutString { // 44) To print all substrings of a string
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine(); 
+        char[] arr = input.toCharArray();
 
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                for (int k = i; k <= j; k++) {
+                    System.out.print(arr[k]);
+                }
+                System.out.println();
+            }
+        }
+        sc.close();
+    }
+}
 
+class MismatchedElements { // 45) To find mismatched elements in two arrays
+    public static void main(String[] args) {
+        String[] arr1 = {"a", "b", "c", "d", "e", "f", "g", "h", "i"};
+        String[] arr2 = {"a", "b", "d", "e", "e", "g", "g", "i", "i"};
+
+        Set<String> set1 = new HashSet<>(Arrays.asList(arr1));
+        Set<String> set2 = new HashSet<>(Arrays.asList(arr2));
+
+        Set<String> mismatch = new HashSet<>(set1);
+        mismatch.addAll(set2);
+        Set<String> intersection = new HashSet<>(set1);
+        intersection.retainAll(set2);
+        mismatch.removeAll(intersection);
+
+        for (String s : mismatch) {
+            System.out.print(s + " ");
+        }
+    }
+}
+
+class HugeNumbers { // 46) To add two huge numbers represented as arrays
+    public static void main(String[] args) {
+        int[] num1 = {9, 2, 8, 1, 3, 5, 6, 7, 3, 1, 1, 6};
+        int[] num2 = {7, 8, 4, 6, 2, 1, 9, 9, 7};
+
+        int n1 = num1.length, n2 = num2.length;
+        int maxLength = Math.max(n1, n2);
+        int[] result = new int[maxLength + 1];
+
+        int i = n1 - 1, j = n2 - 1, k = maxLength, carry = 0;
+
+        while (i >= 0 || j >= 0) {
+            int digit1 = (i >= 0) ? num1[i] : 0;
+            int digit2 = (j >= 0) ? num2[j] : 0;
+
+            int sum = digit1 + digit2 + carry;
+            result[k] = sum % 10;
+            carry = sum / 10;
+
+            i--; j--; k--;
+        }
+
+        result[k] = carry;
+
+        // Print result without leading zero
+        int start = (result[0] == 0) ? 1 : 0;
+        for (int m = start; m < result.length; m++) {
+            System.out.print(result[m]);
+        }
+        System.out.println();
+    }
+}
+
+class SumWithReverse { // 47) To find the sum of a number and its reverse
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int num = sc.nextInt(), reverse = 0, original = num;
+
+        while (num > 0) {
+            reverse = reverse * 10 + (num % 10);
+            num /= 10;
+        }
+
+        int sum = original + reverse;
+        System.out.println(original + " + " + reverse + " = " + sum);
+
+        sc.close();
+    }
+}
 
