@@ -711,17 +711,18 @@ class SumWithReverse { // 47) To find the sum of a number and its reverse
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number:");
-        int num = sc.nextInt(), reverse = 0, original = num;
+        int num = sc.nextInt(), rev = 0, original = num;
 
         while (num > 0) {
-            reverse = reverse * 10 + (num % 10);
+            rev = rev * 10 + (num % 10);
             num /= 10;
         }
 
-        int sum = original + reverse;
-        System.out.println(original + " + " + reverse + " = " + sum);
+        int sum = original + rev;
+        System.out.println(original + " + " + rev + " = " + sum);
 
         sc.close();
     }
 }
+
 
