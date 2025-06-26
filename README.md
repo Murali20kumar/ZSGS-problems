@@ -17,5 +17,5 @@ This repository contains solutions to several fundamental Java programming probl
 11. Find Roots of a Quadratic Equation
 12. Check Whether a Number is Positive or Negative
 13. Check Whether a Character is an Alphabet
-14. Sum of Natural Numbers & Smallest Digit of the Sum
+14. Sum of Natural Numbers & Smallest Digit of the Sum ,etc...
 
