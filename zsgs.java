@@ -725,6 +725,123 @@ class SumWithReverse { // 47) To find the sum of a number and its reverse
     }
 }
 
+class PyramidPattern1 { // 48) To print a pyramid pattern of numbers
+    public static void main(String[] args) {
+        int rows = 9; 
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+    }
+}
+
+class PyramidPattern3 { // 49) To print a pyramid pattern of stars
+    public static void main(String[] args) {
+        int rows = 5;
+        for (int i = 1; i <= rows; i++) {
+           
+            for (int j = i; j < rows; j++) {
+                System.out.print(" ");
+            }
+            
+            for (int k = 1; k <= (2*i - 1); k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+ class PyramidPattern2 { // 50) To print a pyramid pattern of ascending numbers
+    public static void main(String[] args) {
+        int rows = 5;
+        for (int i = 1; i <= rows; i++) {
+            // Print spaces
+            for (int s = i; s < rows; s++) {
+                System.out.print(" ");
+            }
+            // Print ascending numbers
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+ class AlphabetDiamondFull {  // 51) To print a diamond pattern using alphabets
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a character (A-Z): ");
+        char ch = scanner.next().charAt(0);
+        int n = ch - 'A' + 1;
+
+        for (int i = 1; i <= n; i++) {
+            for (int s = 1; s <= n - i; s++) {
+                System.out.print(" ");
+            }
+            char c = (char) ('A' + i - 1);
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+
+        // Lower half
+        for (int i = n - 1; i >= 1; i--) {
+            for (int s = 1; s <= n - i; s++) {
+                System.out.print(" ");
+            }
+            char c = (char) ('A' + i - 1);
+            for (int j = 1; j <= (2 * i - 1); j++) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+    }
+}
+
+class XPattern { // 52) To print an X pattern
+    public static void main(String[] args) {
+        String str = "12345";
+        int n = str.length();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j == i || j == n - 1 - i)
+                    System.out.print(str.charAt(j));
+                else
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+ class EPattern { // 53) To print an E pattern
+    public static void main(String[] args) {
+        int height = 7; 
+        int width = 5;  
+        for (int i = 0; i < height; i++) {
+            if (i == 0 || i == height / 2 || i == height - 1) {
+                
+                System.out.print("+");
+                for (int j = 0; j < width - 2; j++) {
+                    System.out.print("=");
+                }
+                System.out.println("+");
+            } else {
+               
+                System.out.println("| |");
+            }
+        }
+    }
+}
+
+
 
 
 
